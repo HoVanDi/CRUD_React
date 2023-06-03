@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';																
+import './App.css';																															
+// import AllProduct from './components/AllProduct.js';																
+// import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';												
+// import routes from './components/route.js';																
+// import { ToastContainer, toast } from 'react-toastify';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+import 'react-toastify/dist/ReactToastify.css';																
+import { Route, Routes } from "react-router-dom";
+// import Productlist from './components/Productlist';
+import Add from './components/Add';
+import Home from './components/Home';
+class App extends Component {
+  render() {
+    return (
+      <div>
+      {/* <Home></Home> */}
+        <Routes>
+                <Route exact path='/' element={<Home/>}></Route> 
+                <Route path='/Add/:id' element={<Add/>}></Route>
+                <Route path='/Add' element={<Add/>}></Route>
+        </Routes>
+        </div>
+    );
+  }
+ 
+}														
+																
+export default App;																
